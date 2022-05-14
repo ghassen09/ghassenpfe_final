@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% if app.user %}
+	{{ app.user.firstname }}
+	{{ app.user.name }}
+	{% else %}
+	solixy
+	{% endif %}{% endblock %}
+
+{% block body %}
+
+<header id="head">
+		<div class="container">
+		<div class="bg-image"></div>
+			<marquee class="marquee">The best place to tell people why they are here</marquee>
+			</div>
+		
+	</header>
+	<!-- /Header -->
+
+	<!-- Intro -->
+		
+		
+
+{% endblock %}

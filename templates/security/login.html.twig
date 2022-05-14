@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+
+
+
+		<header id="head" class="secondary"></header>
+
+		<!-- container -->
+		<div class="container">
+
+			<ol class="breadcrumb">
+				<li>
+					<a href="{{path('app_home')}}">Home</a>
+				</li>
+				<li class="active">User access</li>
+			</ol>
+
+			<div
+				class="row">
+
+				<!-- Article main content -->
+				<article class="col-xs-12 maincontent">
+					<header class="page-header">
+						<h1 class="page-title">Sign in</h1>
+					</header>
+
+					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h3 class="thin text-center">Sign in to your account</h3>
+								<p class="text-center text-muted">
+									<a href="{{path('app_register')}}">Créer un nouveau compte</a>
+									
+								</p>
+								<hr>
+
+								<form method="post">
+                                {% if error %}
+		<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+
+	{% if app.user %}
+		<div class="mb-3">
+			You are logged in as
+			{{ app.user.userIdentifier }},
+			<a href="{{ path('app_logout') }}">Logout</a>
+		</div>
+	{% endif %}
+									<div class="top-margin">
+										<label for="inputEmail">Username/Email
+											<span class="text-danger">*</span>
+										</label>
+										<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+									</div>
+									<div class="top-margin">
+										<label for="inputPassword">Password
+											<span class="text-danger">*</span>
+										</label>
+										<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+									</div>
+									<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+									<hr>
+
+									<div class="row">
+										<div class="col-lg-8">
+											<b>
+												<a href="">Forgot password?</a>
+											</b>
+										</div>
+										<div class="col-lg-4 text-right">
+											<button class="btn btn-action" type="submit">Sign in</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+
+					</div>
+
+				</article>
+				<!-- /Article -->
+
+			</div>
+		</div>
+		<!-- /container -->
+
+
+		
+
+		
+
+	{% endblock %}
+

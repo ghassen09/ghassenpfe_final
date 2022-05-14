@@ -1,0 +1,147 @@
+html, body
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+width:100%;
+}
+
+
+
+
+
+.linear-gradient {
+    background: linear-gradient(	rgb(255,140,0), rgb(255,165,0));
+}
+.border{
+    border:1px solid black;
+}
+.orange{
+    background-color:v;
+}
+.rayure{
+    background:
+    repeating-linear-gradient(-45deg, transparent, transparent 5px,
+    5px, rgba(249, 169, 48, 0.25) 25px);
+    
+}
+.blanc{
+    background-color:whitesmoke;
+}
+.red {
+    text-align:center;
+    color:white;
+    border-radius: 18px 18px 0px 18px;
+    background: #7d9bc8;
+    padding-top:1%;
+    padding-left:1%;
+    padding-right:1%;
+    border:1px solid white;
+    
+}
+.table{
+	word-spacing:1;
+	padding:1%;
+	background:linear-gradient(#7d9bc8, rgba(249, 185, 48, 0.25));
+	border:100%;
+	color:orange;
+	font-size:22;
+	border-style: double;
+	border-color : orange;
+    text-shadow:none;
+    height:100%
+	}
+    .bouton{
+        color:black;
+    }
+    .bg{
+        background-color:orange;
+    }
+.send{
+    background:rgba(252, 183, 56);
+    border-radius: 12px 12px 12px 12px;
+    border:none;
+    padding-bottom:3%;
+}
+
+
+
+
+
+
+.rond{
+    width:150px;
+    clip-path:ellipse(50% 50%);
+    display:block;
+    margin:auto;
+    margin-top:-15%;
+}
+img{
+    width:100%;
+    height:auto;
+}
+img.img-hablar {
+    width: 50%;
+}
+.img-adaptation{
+    width:60%;
+    height:auto;
+}
+.animation:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.020);
+    transform: scale(1.125);
+}
+.h{
+    height:130px;
+}
+.hauteur{
+    height:700px;
+    max-height:700px;
+    overflow:auto;
+    vertical-align:bottom;
+    background-color:white;
+}
+.hauteur2{
+    height:800px;
+}
+input{
+    display: inline-block;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+.texte{
+    font-family:Book Antiqua;
+    text-align: center;
+}
+.underline{
+    text-decoration:underline;
+}
+.texte2{
+    font-family:Book Antiqua;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+.taille{
+    width:100%;
+    height:auto;
+}
+
+
+
+.margin{
+    margin-top:15%;
+}
+
+
+a{
+    color:black;
+}
+a:hover{
+    text-decoration:none;
+    color:black;
+}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ app.user.firstname }}
+{{ app.user.name }}
+{% endblock %}
+
+{% block body %}
+<header id="head" class="secondary"></header>
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{path('app_users')}}">Home</a>
+        </li>
+        <li class="active">Profile</li>
+    </ol>
+    {% for message in app.flashes('message') %}
+    <div class="col-xs4">
+        <div class="p-3 my-2 rounded-2 success">{{message}}</div>
+    </div>
+    {% endfor %}
+
+
+
+    <div class="profile">
+        <figure>
+            <img class="rond" src="//s3-us-west-2.amazonaws.com/s.cdpn.io/55758/random-user-31.jpg" alt="" />
+        </figure>
+        <header>
+            <h1>{{ app.user.firstname }}
+                {{ app.user.name }}
+            </h1>
+        </header>
+
+        <main>
+            <dl>
+                <dt>Langue</dt>
+                <dd>{{app.user.langue}}</dd>
+                <dt>Occupation</dt>
+                <dd>{{app.user.job}}</dd>
+                <dt>Email</dt>
+                <dd>{{app.user.email}}</dd>
+            </dl>
+        </main>
+    </div>
+    <div>
+
+        <a href="{{ path('app_profile_modifier') }}"><button  type="button" class="btn btn-warning">Modifier votre
+            profile</button></a>
+        <button href="{{ path('app_profile_modifier') }}" type="button" class="btn btn-warning">Changer vote mot de pass</button>
+    </div>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modificationde profile {{ app.user.firstname }}
+{{ app.user.name }}
+{% endblock %}
+
+{% block body %}
+
+
+<header id="head" class="secondary"></header>
+<!-- container -->
+<div class="container">
+
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{path('app_home')}}">Home</a>
+		</li>
+		<li class="active">Modification</li>
+	</ol>
+
+	<div class="row">
+
+		<!-- Article main content -->
+		<article class="col-xs-12 maincontent">
+			<header class="page-header">
+				<h1 class="page-title">Modification</h1>
+			</header>
+
+			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<h3 class="thin text-center">Modifier</br>
+							C’est rapide et facile.</h3>
+						
+						<hr>
+
+						{{ form_start(Edit) }}
+						<div class="row top-margin">
+							<div class="col-sm-6">
+								{{ form_label(Edit.name, 'Nom Utilisateur') }}
+								{{ form_widget(Edit.name, {'attr': {'class': 'form-control'}}) }}
+							</div>
+
+							<div class="col-sm-6">
+								{{ form_label(Edit.firstname, 'Prénom') }}
+								{{ form_widget(Edit.firstname, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+						<div class="row top-margin">
+							<div class="col-sm-5">
+								{{ form_label(Edit.datenais, 'Date de Naissance') }}
+								{{ form_widget(Edit.datenais, {'attr': {'class': 'form-control'}}) }}
+
+							</div>
+							<div class="col-sm-5">
+								{{ form_label(Edit.image, 'Photo') }}
+								{{ form_widget(Edit.image, {'attr': {'class': 'form-control'}}) }}
+
+							</div>
+						</div>
+						<div class="row top-margin">
+							<div class="col-sm-6">
+								{{ form_label(Edit.langue, 'Langue') }}
+								{{ form_widget(Edit.langue, {'attr': {'class': 'form-control'}}) }}
+							</div>
+
+							<div class="col-sm-6">
+								{{ form_label(Edit.job, 'Profession') }}
+								{{ form_widget(Edit.job, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+						<div class="row top-margin">
+							<div class="col-sm-12">
+								{{ form_label(Edit.email, 'Adresse Email') }}
+								{{ form_widget(Edit.email, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+
+
+						
+
+						</div>
+
+						
+							<div class="col-lg-4 text-right">
+								<button class="btn btn-action" type="submit">Se modifier</button>
+								{{ form_end(Edit) }}
+							</div>
+						</div>
+						</form>
+
+					</div>
+				</div>
+
+			</div>
+
+		</article>
+		<!-- /Article -->
+
+	</div>
+</div> <!-- /container -->
+
+
+
+
+
+{% endblock %}

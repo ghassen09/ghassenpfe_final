@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+{% if app.user %}
+	{{ app.user.firstname }}
+	{{ app.user.name }}
+	{% else %}
+	solixy
+	{% endif %}
+{% endblock %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/css/axentix.min.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<style>
+	.message{
+		z-index:1;
+	height: 20%;
+	font-weight: 20%;
+}
+#map{
+	z-index:0;
+}
+</style>
+
+
+{% endblock %}
+{% block body %}
+	<body
+		class="home">
+		<!-- Fixed navbar -->
+		
+
+
+		<div id="map">
+		</div>
+		<a href="{{ path("app_messages_send") }}"><img  src="{{ asset("assets/images/messenger.png") }}" width="50" class="messenger-icon" /></a>
+	
+
+		<script>
+			function initMap() {
+var options = {
+center: {
+lat: 38.3460,
+lng: -0.4907
+},
+zoom: 8
+};
+
+map = new google.maps.Map(document.getElementById("map"), options);
+}
+window.initMap = initMap;
+		</script>
+		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyW18P2_cBG_94fYihxirHnIn-OEbXQbw&callback=initMap"></script>
+
+
+		
+
+
+{% block javascripts %}{% endblock %}
+
+</body></html>
+{% endblock %}
+

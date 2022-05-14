@@ -1,0 +1,164 @@
+{% extends 'basemessage.html.twig' %}
+
+{% block title %}Messagerie
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-12">
+			<div class="row">
+
+
+				<div class="col-12 col-sm-5 col-md-4 col-xl-3 linear-gradient border">
+					<div class="row">
+						<div class=" col-12">
+
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+
+
+
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class=" col-12 mb-2">
+							<img class="img-fluid rond" src="{{asset("assets/chat/image/image4.jpg")}}" />
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 texte" id="surname">
+							<h3 contentEditable="True">{{ app.user.firstname }}
+								{{ app.user.name }}</h3>
+                                <a href="{{ path("app_messages_received") }}"><p class="underline">Boite de réception {{ app.user.recieved|length }} </a><br/>
+			  <a href="{{ path("app_messages_sent") }}"><p class="underline">Messages envoyés {{ app.user.sent|length }} </a><br/>
+							<p class="underline">Modifier sa photo <br />
+
+
+
+
+								<div class="flex-sm-fill text-sm-center">
+									<div class="bouton"> <button type="button" class="btn bouton" data-toggle="modal"
+											data-target="#exampleModal">
+											Changer son pseudo <br />
+
+										</button>
+									</div>
+
+
+									<!-- Modal -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+										aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-lg" role="document">
+
+											<form>
+												<!--Modal content-->
+												<div class="modal-content table">
+													<div class="modal-header">
+
+														<button type="button" class="close bouton" data-dismiss="modal"
+															aria-label="Close">
+															<span class="bouton" aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body bouton">
+
+														<label>Pseudo :</label>
+														<input type="text" id="pseudo" name="pseudo" />
+
+
+													</div>
+													<div class="modal-footer justify-content-center">
+
+														<button type="submit" id="replace" value="Enregistrer"
+															name="Enregistrer" class="btn bouton bg"
+															onclick="replace()">Enregistrer</button>
+													</div>
+												</div>
+										</div>
+										</form>
+									</div>
+								</div>
+
+
+
+
+
+
+								<a href="{{path('app_logout')}}">Déconnexion</a>
+							</p>
+						</div>
+					</div>
+					</br></br></br></br></br>
+
+
+
+
+					<div class="row text-center mb-3">
+						<div class="col-4">
+							<button class="btn"><img class="img-fluid img-adaptation animation"
+									src="{{asset("assets/chat/image/image1.png")}}" /></button>
+						</div>
+						<div class="col-4">
+							<button class="btn"> <img class="img-fluid img-adaptation animation"
+									src="{{asset("assets/chat/image/image2.png")}}" /></button>
+						</div>
+						<div class="col-4">
+							<button class="btn"><img class="img-fluid img-adaptation animation"
+									src="{{asset("assets/chat/image/image3.png")}}" /></button>
+
+
+
+							<!--         <button onclick = "changeColor('blue');">Bleu</button> 
+                                    <button onclick = "changeColor('green');">Vert</button> 
+                                    <button onclick = "changeColor('red');">Rouge</button>
+                                    <button onclick = "changeColor('yellow');">Jaune</button> 
+                  -->
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="col-12 col-sm-7 col-md-8  col-xl-7 border blanc">
+					<div class="row">
+						<div class="col-12 texte2 orange">
+							Messageries
+						</div>
+					</div>
+					
+					
+
+
+					<section class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Envoyer un message</h1>
+                {{ form(form) }}
+				
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+</div>
+</div>
+</div>
+{% endblock %}

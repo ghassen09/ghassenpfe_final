@@ -1,0 +1,56 @@
+<div class="navbar navbar-inverse navbar-fixed-top headroom">
+	<div class="container">
+		<div class="navbar-header">
+			<!-- Button for smallest screens -->
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html"><img src="{{asset("assets/images/sol.png")}}" alt="solixy"
+					width="35%"></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav pull-right">
+
+
+				</li>
+
+				{% if app.user %}
+				<li>
+					<a href="{{path('app_profile')}}">Profile</a>
+				</li>
+				<li>
+					<a href="{{path('app_messages_send')}}">Messages</a>
+					
+
+				<li>
+					<a class="btn" href="{{path('app_logout')}}">LOGOUT</a>
+				</li>
+
+				{% else %}
+				<li class="active">
+					<a href="{{path('app_home')}}">Home</a>
+				</li>
+
+				<li>
+					<a href="{{path('app_about')}}">About</a>
+				</li>
+
+				<li>
+					<a href="">Contact</a>
+				</li>
+
+				<li>
+
+					<a class="btn" href="{{path('app_login')}}">SIGN IN / SIGN UP</a>
+				</li>
+
+				{% endif %}
+
+			</ul>
+		</div>
+		<!--/.nav-collapse -->
+	</div>
+</div>
+<!-- /.navbar -->
