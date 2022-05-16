@@ -49,7 +49,12 @@ zoom: 8
 };
 
 map = new google.maps.Map(document.getElementById("map"), options);
+var marker=new google.mpas.Marker({position: {
+lat: 38.3460,
+lng: -0.4907
+},map:map,title:"hw"});
 }
+
 window.initMap = initMap;
 		</script>
 		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyW18P2_cBG_94fYihxirHnIn-OEbXQbw&callback=initMap"></script>

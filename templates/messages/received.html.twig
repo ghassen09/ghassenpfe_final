@@ -38,6 +38,7 @@
 						<div class="col-12 texte" id="surname">
 							<h3 contentEditable="True">{{ app.user.firstname }}
 								{{ app.user.name }}</h3>
+								<a href="{{ path("app_users") }}"><p class="underline">Acceuil </a><br />
                                 <a href="{{ path("app_messages_received") }}"><p class="underline">Boite de réception {{ app.user.recieved|length }} </a><br/>
 								 <a href="{{ path("app_messages_sent") }}"> <p class="underline">Messages envoyés {{ app.user.sent|length }} <br/>
 							<p class="underline">Modifier sa photo <br />
@@ -48,7 +49,7 @@
 								<div class="flex-sm-fill text-sm-center">
 									<div class="bouton"> <button type="button" class="btn bouton" data-toggle="modal"
 											data-target="#exampleModal">
-											Changer son pseudo <br />
+											 <br />
 
 										</button>
 									</div>

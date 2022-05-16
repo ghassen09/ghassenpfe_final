@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contact {% set users = craft.users({
+    group: "userGroupHandle"
+}).all() %}
+
+{% for user in users %}
+    {{ user.firstName }} {{ user.lastName }}
+{% endfor %}
+{% endblock %}
 
 {% block body %}
 
@@ -84,7 +91,5 @@
         </div>
     </div> <!-- /container -->
 
-    <section class="container-full top-space">
-        <div id="map"></div>
-    </section>
+    
     {% endblock %}
