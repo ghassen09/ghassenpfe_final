@@ -1,4 +1,3 @@
-
 {% extends 'base.html.twig' %}
 
 {% block title %}About{% endblock %}
@@ -21,17 +20,41 @@
         <div class="row">
 
             <!-- Article main content -->
-            <article class="col-sm-9 maincontent">
+            <article class="col-sm-6 maincontent">
                 <header class="page-header">
                     <h1 class="page-title">About</h1>
                 </header>
-                <section></section>
+                <section>
 
-         
-            <!-- /Sidebar -->
+                    <img class="img-fluid " src="{{asset("assets/images/header.png")}}" />
+                </section>
+</article>
+              <aside class="col-sm-5 sidebar sidebar-right">
+
+                <div class="widget">
+                </br>
+                </br>
+                 </br>
+                </br>
+                </br>
+                  <p style= "font-family: cursive; font-size:15px">Suite aux problèmes cités précédemment, l’idée de notre projet consiste à mettre en place un
+                            site des immigrants en ligne qui permet les immigrants d’être branchés dans votre monde
+                            d’une manière simple et rapide. En fait, le site permet de faciliter et d'accélérer
+                            l’apprentissage de la langue. De même, il fournit toutes les informations que les immigrants
+                            peuvent à besoin, ainsi, il répond à toutes vos questions sans besoin de personne. Du coup,
+                            notre site aide les immigrants s’adapter plus rapidement et à sentir chez vous partout le
+                            monde.</p>
+                   
+                </div>
+
+            </aside>
+            
+
+
+                <!-- /Sidebar -->
 
         </div>
     </div> <!-- /container -->
 
-    
+
     {% endblock %}

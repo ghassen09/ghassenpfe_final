@@ -1,12 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact {% set users = craft.users({
-    group: "userGroupHandle"
-}).all() %}
-
-{% for user in users %}
-    {{ user.firstName }} {{ user.lastName }}
-{% endfor %}
+{% block title %}Contact
 {% endblock %}
 
 {% block body %}
@@ -32,40 +26,45 @@
                     <h1 class="page-title">Contact us</h1>
                 </header>
 
-                <p>
-                    We’d love to hear from you. Interested in working together? Fill out the form below with some info
-                    about your project and I will get back to you as soon as I can. Please allow a couple days for me to
-                    respond.
+                If you have any questions please fill out this contact form. Thank you!.
                 </p>
+                <p>
+                    Si vous avez des questions, veuillez remplir ce formulaire de contact. Merci!
+
+                </p>
+                {{ form_start(contactForm) }}
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_label(contactForm.name, 'Name') }}
+                        {{ form_widget(contactForm.name, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(contactForm.email, 'Email') }}
+                        {{ form_widget(contactForm.email, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="col-sm-4">
+                        {{ form_label(contactForm.phone, 'Phone') }}
+                        {{ form_widget(contactForm.phone, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                </div>
                 <br>
-                <form>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <input class="form-control" type="text" placeholder="Name">
-                        </div>
-                        <div class="col-sm-4">
-                            <input class="form-control" type="text" placeholder="Email">
-                        </div>
-                        <div class="col-sm-4">
-                            <input class="form-control" type="text" placeholder="Phone">
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{ form_label(contactForm.message, 'Message') }}
+                        {{ form_widget(contactForm.message, {'attr': {'class': 'form-control'}}) }}
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <textarea placeholder="Type your message here..." class="form-control" rows="9"></textarea>
-                        </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-8">
+                        {{ form_widget(contactForm.agreeTerms) }} <a href="#">Termes d'utilisations</a>
+                        I've read the <a href="">Terms and Conditions</a>
                     </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <label class="checkbox"><input type="checkbox"> Sign up for newsletter</label>
-                        </div>
-                        <div class="col-sm-6 text-right">
-                            <input class="btn btn-action" type="submit" value="Send message">
-                        </div>
+                    <div class="col-lg-4 text-right">
+                        <input class="btn btn-action" type="submit" value="Send message">
                     </div>
-                </form>
+                </div>
+                {{ form_end(contactForm) }}
 
             </article>
             <!-- /Article -->
@@ -91,5 +90,5 @@
         </div>
     </div> <!-- /container -->
 
-    
+
     {% endblock %}
