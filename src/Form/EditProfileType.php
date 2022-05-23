@@ -33,12 +33,7 @@ class EditProfileType extends AbstractType
                 ],
             ])
         
-            ->add('image',FileType::class,[
-                'label'=>false,
-                'multiple'=>false,
-                
-                'required'=>false,
-            ])
+          
             
             
         ;

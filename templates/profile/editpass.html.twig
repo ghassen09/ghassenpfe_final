@@ -1,8 +1,18 @@
-{% extends 'users.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Modification du mot de passe de {{ app.user.firstname }} {{ app.user.name }}{% endblock %}
 
 {% block body %}
+<header id="head" class="secondary"></header>
+<!-- container -->
+<div class="container">
+
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{path('app_home')}}">Home</a>
+		</li>
+		<li class="active">Modification mot de passe</li>
+	</ol>
 	<div class="grix xs4 container">
 		{% for message in app.flashes('error') %}
 			<div class="col-xs4">

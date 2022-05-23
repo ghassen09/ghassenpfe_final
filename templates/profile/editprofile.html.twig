@@ -53,8 +53,7 @@
 
 							</div>
 							<div class="col-sm-5">
-								{{ form_label(Edit.image, 'Photo') }}
-								{{ form_widget(Edit.image, {'attr': {'class': 'form-control'}}) }}
+								
 
 							</div>
 						</div>
@@ -78,11 +77,12 @@
 
 
 
-						
+					</br>
 
-						</div>
-
-						
+						<div class="col-lg-8">
+                        {{ form_widget(Edit.agreeTerms) }} <a href="#">Termes d'utilisations</a>
+                        
+                    </div>
 							<div class="col-lg-4 text-right">
 								<button class="btn btn-action" type="submit">Se modifier</button>
 								{{ form_end(Edit) }}

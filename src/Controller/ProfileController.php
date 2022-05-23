@@ -3,11 +3,12 @@
 namespace App\Controller;
 
 use App\Form\EditProfileType;
-use App\Form\ChangePasswordFormType;
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class ProfileController extends AbstractController
@@ -36,38 +37,34 @@ class ProfileController extends AbstractController
             return $this->redirectToRoute('app_profile');
         }
 
-        return $this->render('users/editprofile.html.twig', [
-            'form' => $form->createView(),
+        return $this->render('profile/editprofile.html.twig', [
+            'Edit' => $form->createView(),
         ]);
     }
     
-   
+
     #[Route('/profile/pass', name: 'app_profile_pass')]
-            public function editpassword(Request $req, UserPasswordEncoderInterface $passwordEncoder): Response
-            {
-        
-                $user = $this->security->getUser();
-        
-                $changePasswordForm = $this->createForm(ChangePasswordFormType::class, $user);
-                $changePasswordForm->handleRequest($req);
-        
-                if ($changePasswordForm->isSubmitted() && $changePasswordForm->isValid()) {
-                    $user->setPassword(
-                        $passwordEncoder->encodePassword(
-                            $user,
-                            $changePasswordForm->get('plainPassword')->getData()
-                        )
-                    );
-                    $entityManager = $this->getDoctrine()->getManager();
-                    $entityManager->persist($user);
-                    $entityManager->flush();
-                }
-        
-            return $this->render('profile/editpass.html.twig', [
-            'change_password_form' => $changePasswordForm->createView(),
-            ]);
-        
+    public function editPass(Request $request, UserPasswordHasherInterface $userPasswordHasher )
+    {
+        if($request->isMethod('POST')){
+            $em = $this->getDoctrine()->getManager();
+
+            $user = $this->getUser();
+
+            // On vérifie si les 2 mots de passe sont identiques
+            if($request->request->get('pass') == $request->request->get('pass2')){
+                $user->setPassword($userPasswordHasher->hashPassword($user, $request->request->get('pass')));
+                
+                $em->flush();
+                $this->addFlash('message', 'Mot de passe mis à jour avec succès');
+
+                return $this->redirectToRoute('app_users');
+            }else{
+                $this->addFlash('error', 'Les deux mots de passe ne sont pas identiques');
             }
-    
+        }
+
+        return $this->render('profile/editpass.html.twig');
+    }
 }
 
