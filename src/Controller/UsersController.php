@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Users;
 use App\Form\EditType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,7 +15,7 @@ class UsersController extends AbstractController
     public function index(): Response
     {
         return $this->render('users/index.html.twig', [
-            'controller_name' => 'UsersController',
+            'users' => $this->getDoctrine()->getRepository(Users::class)->findAll(),
         ]);
         
     }

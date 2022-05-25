@@ -39,7 +39,7 @@
 								{{ app.user.name }}</h3>
 								<a href="{{ path("app_users") }}"><p class="underline">Acceuil </a><br />
 							<a href="{{ path("app_messages_send") }}">
-								<p class="underline">Encoyer Message
+								<p class="underline">Envoyer Message
 							</a></p>
 							<a href="{{ path("app_messages_received") }}">
 								<p class="underline">Boite de réception {{ app.user.recieved|length }}
@@ -60,22 +60,19 @@
 							</p>
 						</div>
 					</div>
-					</br></br></br></br></br>
+					</br></br></br>
 
 
 
 					<div class="row text-center mb-3">
 						<div class="col-4">
-							<button class="btn"><img class="img-fluid img-adaptation animation"
-									src="{{asset("assets/chat/image/image1.png")}}" /></button>
+							<button class="btn"><img class="img-fluid img-adaptation animation" /></button>
 						</div>
 						<div class="col-4">
-							<button class="btn"> <img class="img-fluid img-adaptation animation"
-									src="{{asset("assets/chat/image/image2.png")}}" /></button>
+							<button class="btn"> <img class="img-fluid img-adaptation animation"/></button>
 						</div>
 						<div class="col-4">
-							<button class="btn"><img class="img-fluid img-adaptation animation"
-									src="{{asset("assets/chat/image/image3.png")}}" /></button>
+							<button class="btn"><img class="img-fluid img-adaptation animation" /></button>
 
 
 
@@ -108,17 +105,17 @@
 									{{ app.user.sent|length }}
 									messages</p>
 							</div>
-							<div class="col-5">De</div>
-							<div class="col-3">Sujet</div>
+							<div class="col-5">A</div>
+							<div class="col-3">Contenu</div>
 							<div class="col-3">Date</div>
 							<div class="col-1">Actions</div>
 							{% for message in app.user.sent %}
 							{% set bold = "" %}
 
 
-							<div class="col-5 {{bold}}">{{ message.sender.email }}</div>
+							<div class="col-5 {{bold}}">{{ message.recipient.email }}</div>
 							<div class="col-3 {{bold}}">
-								{{ message.title }}
+								{{ message.message }}
 							</div>
 							<div class="col-3 {{bold}}">{{ message.createdAt|date }}</div>
 							<div class="col-1">
@@ -135,15 +132,15 @@
 
 							<div>
 							
-								<button href="{{path("app_messages_received")}}" type="button" class="btn btn-warning">Boites de réceptions</button>
-								<button href="{{path("app_messages_send")}}" type="button" class="btn btn-warning">Envoyer un message</button>
+								<a href="{{path("app_messages_received")}}" ><button type="button" class="btn btn-warning">Boites de réceptions</button></a>
+								<a href="{{path("app_messages_send")}}" ><type="button" class="btn btn-warning">Envoyer un message</button></a>
 							</div>
 						</div>
 					
 
 </div>
 
-				<div><p>Ghassen<p/></div>
+				<div></div>
 				
 				
 			</div>

@@ -254,7 +254,7 @@ img.pull-left {
 	margin-top: 20px;
 }
 
-#map {
+#mapid {
 	height: calc(100vh - 100px);
 
 }

@@ -18,12 +18,19 @@
 
 				{% if app.user %}
 				<li>
+					<a href="{{path('app_users')}}">Acceuil</a>
+				</li>
+				<li>
 					<a href="{{path('app_profile')}}">Profile</a>
 				</li>
 				<li>
 					<a href="{{path('app_messages_send')}}">Messages</a>
 					
-
+                    </li>
+					<li>
+					<a href="{{path('app_localisation')}}">localisation</a>
+					
+                    </li>
 				<li>
 					<a class="btn" href="{{path('app_logout')}}">LOGOUT</a>
 				</li>

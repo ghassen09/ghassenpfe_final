@@ -54,6 +54,16 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'blob')]
     private $image;
 
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $lat;
+
+    #[ORM\Column(type: 'float', nullable: true)]
+    private $longitude;
+
+   
+
+
+
 
     public function __construct()
     {
@@ -282,6 +292,32 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getLat(): ?float
+    {
+        return $this->lat;
+    }
+
+    public function setLat(?float $lat): self
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?float
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(?float $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+   
 
    
 }

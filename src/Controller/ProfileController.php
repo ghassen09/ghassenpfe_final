@@ -66,5 +66,6 @@ class ProfileController extends AbstractController
 
         return $this->render('profile/editpass.html.twig');
     }
+    
 }
 

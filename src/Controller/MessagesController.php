@@ -35,7 +35,7 @@ class MessagesController extends AbstractController
             $em->flush();
 
             $this->addFlash("message", "Message envoyé avec succès.");
-            return $this->redirectToRoute("app_messages");
+            return $this->redirectToRoute("app_messages_sent");
         }
 
         return $this->render("messages/send.html.twig", [
@@ -65,7 +65,7 @@ class MessagesController extends AbstractController
         $em->remove($message);
         $em->flush();
 
-        return $this->redirectToRoute("app_messages");
+        return $this->redirectToRoute("app_messages_send");
     }
     
 }
