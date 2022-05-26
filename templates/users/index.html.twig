@@ -41,7 +41,7 @@ solixy
 	<script>
 		let map, marqueur //variable pour la carte
 		window.onload = () => {
-			map = L.map('mapid').setView([51.505, -0.06], 4);
+			map = L.map('mapid').setView([51.505, -0.06], 2);
 			{% for key, user in users%}
 				console.log("{{ user.longitude}}");
 				console.log("{{ user.lat}}");
