@@ -36,10 +36,10 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('image',FileType::class,[
-                'label'=>false,
-                'multiple'=>false,
-                
-                'required'=>false,
+                'label' => false,
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
