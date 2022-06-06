@@ -28,52 +28,54 @@
 			<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h3 class="thin text-center">S’inscrire</br>
-							C’est rapide et facile.</h3>
-						<p class="text-center text-muted">En appuyant sur S’inscrire, vous acceptez nos Conditions
-							générales, notre Politique d’utilisation des données et notre Politique d’utilisation des
-							cookies. Vous recevrez peut-être des notifications par texto de notre part et vous pouvez à
-							tout moment vous désabonner.
+						<h3 class="thin text-center">Register</br>
+							It's quick and easy</h3>
+						<p class="text-center text-muted">By pressing Register, you agree to our Terms
+							General Terms, our Data Use Policy and our Data Use Policy.
+							Cookies. You may receive text notifications from us and you can
+							unsubscribe at any time.
 						</p>
 						<hr>
 
 						{{ form_start(registrationForm) }}
 						<div class="row top-margin">
 							<div class="col-sm-6">
-								{{ form_label(registrationForm.name, 'Nom Utilisateur') }}
+								{{ form_label(registrationForm.name, 'Name') }}
 								{{ form_widget(registrationForm.name, {'attr': {'class': 'form-control'}}) }}
 							</div>
 
 							<div class="col-sm-6">
-								{{ form_label(registrationForm.firstname, 'Prénom') }}
+								{{ form_label(registrationForm.firstname, 'Firstname') }}
 								{{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control'}}) }}
 							</div>
 						</div>
-						<div class="row top-margin">
+						<div class="row  form-group top-margin">
 							<div class="col-sm-5">
-								{{ form_label(registrationForm.datenais, 'Date de Naissance') }}
-								{{ form_widget(registrationForm.datenais, {'attr': {'class': 'form-control'}}) }}
-
+								{{ form_label(registrationForm.datenais, 'Date of Birth') }}
+								<div class="input-group-prepend">
+								{{ form_widget(registrationForm.datenais, {'attr': {'class': 'form-control', 'placeholder': 'MM/DD/YYYY' }}) }}
+                            </div>
 							</div>
 							<div class="col-sm-5">
+							{{ form_label(registrationForm.datenais, 'Image') }}
 								{{form_widget(registrationForm.image,{'attr':{'class':'form-control'}})}}
 
 							</div>
 						</div>
 						<div class="row top-margin">
 							<div class="col-sm-6">
-								{{ form_label(registrationForm.langue, 'Langue') }}
+								{{ form_label(registrationForm.langue, 'Language') }}
 								{{ form_widget(registrationForm.langue, {'attr': {'class': 'form-control'}}) }}
 							</div>
 
 							<div class="col-sm-6">
-								{{ form_label(registrationForm.job, 'Profession') }}
+								{{ form_label(registrationForm.job, 'Occupation') }}
 								{{ form_widget(registrationForm.job, {'attr': {'class': 'form-control'}}) }}
 							</div>
 						</div>
 						<div class="row top-margin">
 							<div class="col-sm-12">
-								{{ form_label(registrationForm.email, 'Adresse Email') }}
+								{{ form_label(registrationForm.email, 'E-mail address') }}
 								{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
 							</div>
 						</div>
@@ -82,7 +84,7 @@
 
 						<div class="row top-margin">
 							<div class="col-sm-6">
-								{{ form_label(registrationForm.plainPassword, 'Mot de Passe') }}
+								{{ form_label(registrationForm.plainPassword, 'Password') }}
 								{{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}})
 								}}
 							</div>
@@ -93,11 +95,11 @@
 
 						<div class="row">
 							<div class="col-lg-8">
-								{{ form_widget(registrationForm.agreeTerms) }} <a href="#">Termes d'utilisations</a>
+								{{ form_widget(registrationForm.agreeTerms) }} <a href="#">Terms of use</a>
 								I've read the <a href="">Terms and Conditions</a>
 							</div>
 							<div class="col-lg-4 text-right">
-								<button class="btn btn-action" type="submit">S’inscrire</button>
+								<button class="btn btn-action" type="submit">Register</button>
 								{{ form_end(registrationForm) }}
 							</div>
 						</div>

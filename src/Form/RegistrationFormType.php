@@ -26,7 +26,10 @@ class RegistrationFormType extends AbstractType
             ->add('firstname',TextType::class)
             ->add('langue',TextType::class)
             ->add('job',TextType::class)
-            ->add('datenais',DateType::class)
+            ->add('datenais',DateType::class,[
+                // renders it as a single text box
+                'widget' => 'single_text',
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
