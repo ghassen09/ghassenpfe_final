@@ -30,6 +30,23 @@ class ProfileController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
+            $images = $form->get('image')->getData();
+
+             //On bloucle sur les images 
+             foreach( $images as $image){
+                 //on génére un nouveau nom de fichier
+                  
+                 $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+
+                 //On copie le fichier dans le dossier uploads
+                 $image ->move(
+                    $this->getParameter('images_directory'),
+                    $fichier
+                 );
+                 //on stocke l'image dans la base de données (son nom)
+                 $fichier='/uploads/'.$fichier;
+                 $user -> setImage($fichier);
+             }//
             $em->persist($user);
             $em->flush();
 

@@ -44,7 +44,7 @@ solixy
 			{% for key, user in users%}
 
 
-				addMarker({"lat":{{ user.lat }} , "lng":{{ user.longitude}} },"{{user.firstname}}", "{{user.name}}","{{user.job}}");
+				addMarker({"lat":{{ user.lat }} , "lng":{{ user.longitude}} },"{{user.firstname}}", "{{user.name}}","{{user.job}}","{{user.langue}}","{{user.image}}");
 				
 			{% endfor %}
 			L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -54,7 +54,7 @@ solixy
 
 		}
 
-		function addMarker(pos,firstname,name,job) {
+		function addMarker(pos,firstname,name,job,langue,image) {
 			
 			
 			marqueur = L.marker(pos, {
@@ -69,7 +69,7 @@ solixy
 
 			})
 						
-			marqueur.bindPopup( "User : "+firstname+" "+ name+"</br>Ocuppation : "+job).addTo(map);
+			marqueur.bindPopup("<img src=" + image+ ">" +"</br>User : "+firstname+" "+ name+"</br>Ocuppation : "+job+" </br>langue : "+ langue ).addTo(map);
 		}
 
 	</script>
