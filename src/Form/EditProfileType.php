@@ -24,6 +24,12 @@ class EditProfileType extends AbstractType
             ->add('langue',TextType::class)
             ->add('job',TextType::class)
             ->add('datenais')
+            ->add('image',FileType::class,[
+                'label' => false,
+                'multiple' => true,
+                'mapped' => false,
+                'required' => false
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
