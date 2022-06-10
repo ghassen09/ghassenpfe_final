@@ -20,11 +20,10 @@
             <!-- Article main content -->
             <article class="col-sm-9 maincontent">
                 <header class="page-header">
-                    <h1 class="page-title">Contact us</h1>
+                    <h1 class="page-title">Contact </h1>
                 </header>
 
-                If you have any questions please fill out this contact form. Thank you!.
-                </p>
+               
                 <p>
                     Si vous avez des questions, veuillez remplir ce formulaire de contact. Merci!
 
@@ -32,7 +31,7 @@
                 {{ form_start(contactForm) }}
                 <div class="row">
                     <div class="col-sm-4">
-                        {{ form_label(contactForm.name, 'Name') }}
+                        {{ form_label(contactForm.name, 'Nom') }}
                         {{ form_widget(contactForm.name, {'attr': {'class': 'form-control'}}) }}
                     </div>
                     <div class="col-sm-4">
@@ -40,7 +39,7 @@
                         {{ form_widget(contactForm.email, {'attr': {'class': 'form-control'}}) }}
                     </div>
                     <div class="col-sm-4">
-                        {{ form_label(contactForm.phone, 'Phone') }}
+                        {{ form_label(contactForm.phone, 'Téléphone') }}
                         {{ form_widget(contactForm.phone, {'attr': {'class': 'form-control'}}) }}
                     </div>
                 </div>
@@ -54,11 +53,11 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-8">
-                        {{ form_widget(contactForm.agreeTerms) }} <a href="#">Termes d'utilisations</a>
-                        I've read the <a href="">Terms and Conditions</a>
+                        {{ form_widget(contactForm.agreeTerms) }} <a href="#">Conditions d'utilisation</a>
+								j'ai lu le <a href="">Termes et conditions</a>
                     </div>
                     <div class="col-lg-4 text-right">
-                        <input class="btn btn-action" type="submit" value="Send message">
+                        <input class="btn btn-action" type="submit" value="Envoyer message">
                     </div>
                 </div>
                 {{ form_end(contactForm) }}

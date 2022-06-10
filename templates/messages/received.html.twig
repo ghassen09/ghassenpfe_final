@@ -29,8 +29,7 @@
 
 					<div class="row">
 						<div class=" col-12 mb-2">
-							<img class="img-fluid rond" src="{{asset("assets/chat/image/image4.jpg")}}" />
-						</div>
+<img class="img-fluid rond" src="{{app.user.image}}" />						</div>
 					</div>
 
 					<div class="row">
@@ -45,7 +44,7 @@
 							</a><br />
 							<a href="{{ path("app_messages_sent") }}">
 								<p class="underline">Messages envoyés {{ app.user.sent|length }} <br />
-									<p class="underline">Modifier sa photo <br />
+									
 
 
 
@@ -148,20 +147,20 @@
 
 									messages</p>
 							</div>
-							<div class="col-3">De</div>
-							<div class="col-3">Sujet</div>
+							<div class="col-5">De</div>
+							<div class="col-3">contenu</div>
 							<div class="col-3">Date</div>
-							<div class="col-3">Actions</div>
+							<div class="col-1">Actions</div>
 							{% for message in app.user.recieved %}
 							{% set bold = "" %}
 
 
-							<div class="col-3 {{bold}}">{{ message.sender.email }}</div>
-							<div class="col-3 {{bold}}">
+							<div class="col-5 {{bold}}">{{ message.sender.email }}</div>
+							<div class="col-3 {{bold}}">{{ message.message }}
 
 							</div>
 							<div class="col-3 {{bold}}">{{ message.createdAt|date }}</div>
-							<div class="col-3">
+							<div class="col-1">
 								<a href="{{ path("app_messages_delete", {id: message.id}) }}">
 									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
 										class="bi bi-file-excel-fill text-danger" viewbox="0 0 16 16">
